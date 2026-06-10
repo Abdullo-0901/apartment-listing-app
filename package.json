@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "compile": "tsc -b -w"
+    "compile": "tsc -b -w",
+    "run-server": "npx json-server --watch db.json --port 3002"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -28,6 +29,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "json-server": "1.0.0-beta.15",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
