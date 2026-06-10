@@ -3,16 +3,29 @@ import { ApartmentListSkeleton } from "../components/apartment-list/apartment-li
 import { ApartmentList } from "../components/apartment-list/apartment-list.component";
 import { Filters } from "../components/apartment-filter/apartment-filter.component";
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{
+    rooms?: string;
+    minPrice?: string;
+    maxPrice?: string;
+  }>;
+}) {
+  const params = await searchParams;
+
   return (
     <main className="container">
       <section className="hero">
         <h1>Аренда квартир</h1>
-        <p>Найдите подходящее жильё из нашей базы</p>
       </section>
+      <Filters {...params} />
 
-      <Suspense fallback={<ApartmentListSkeleton />}>
-        <ApartmentList />
+      <Suspense
+        key={JSON.stringify(params)}
+        fallback={<ApartmentListSkeleton />}
+      >
+        <ApartmentList {...params} />
       </Suspense>
     </main>
   );
