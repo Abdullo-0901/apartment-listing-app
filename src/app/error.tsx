@@ -1,26 +1,22 @@
 "use client";
 
-import { Building2, RefreshCw } from "lucide-react";
-
-import styles from "./status-pages.module.css";
+import { RefreshCw } from "lucide-react";
 import { Button } from "../components/ui/button";
+import "./globals.css";
 
 export default function Error({ reset }: { error: Error; reset: () => void }) {
   return (
-    <main className={styles.container}>
-      <div className={styles.icon}>
-        <Building2 size={72} />
-      </div>
+    <main className="status-page">
+      <RefreshCw size={72} className="status-page-icon" />
 
-      <h1 className={styles.title}>Не удалось загрузить квартиры</h1>
+      <h1 className="status-page-title">Не удалось загрузить данные</h1>
 
-      <p className={styles.description}>
-        Произошла ошибка при загрузке данных. Возможно сервер временно
-        недоступен. Попробуйте обновить страницу позже.
+      <p className="status-page-description">
+        Произошла ошибка при загрузке квартир. Попробуйте обновить страницу
+        позже.
       </p>
 
       <Button size="lg" onClick={() => reset()}>
-        <RefreshCw />
         Попробовать снова
       </Button>
     </main>

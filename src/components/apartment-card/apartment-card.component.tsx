@@ -10,7 +10,12 @@ export function ApartmentCard({ apartment }: { apartment: Apartment }) {
   return (
     <Card className={styles.card}>
       <div className={styles.imageWrapper}>
-        <Image fill src={apartment.image} alt={apartment.title} />
+        <Image
+          fill
+          src={apartment.image}
+          alt={apartment.title}
+          className={styles.image}
+        />
 
         <div className={styles.badges}>
           <span>{apartment.rooms} комн.</span>
@@ -19,11 +24,11 @@ export function ApartmentCard({ apartment }: { apartment: Apartment }) {
       </div>
 
       <div className={styles.content}>
-        <h3>{apartment.price.toLocaleString()} ₽/мес</h3>
+        <h3>{apartment.price.toLocaleString("ru-RU")} сом/мес</h3>
 
         <p>{apartment.title}</p>
 
-        <Button asChild>
+        <Button asChild className={styles.button}>
           <Link href={`/apartments/${apartment.id}`}>Подробнее</Link>
         </Button>
       </div>

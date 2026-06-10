@@ -1,14 +1,19 @@
-import { Button } from "../components/ui/button";
-import { getApartments } from "../lib";
+import { Suspense } from "react";
+import { ApartmentListSkeleton } from "../components/apartment-list/apartment-list-skeleton.component";
+import { ApartmentList } from "../components/apartment-list/apartment-list.component";
+import { Filters } from "../components/apartment-filter/apartment-filter.component";
 
 export default async function Home() {
-  const apartaments = await getApartments();
-
-  console.log("apartaments", apartaments);
-
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <Button>Worked</Button>
-    </div>
+    <main className="container">
+      <section className="hero">
+        <h1>Аренда квартир</h1>
+        <p>Найдите подходящее жильё из нашей базы</p>
+      </section>
+
+      <Suspense fallback={<ApartmentListSkeleton />}>
+        <ApartmentList />
+      </Suspense>
+    </main>
   );
 }

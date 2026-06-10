@@ -1,17 +1,16 @@
 import Link from "next/link";
 import { SearchX } from "lucide-react";
 
-import styles from "./status-pages.module.css";
 import { Button } from "../components/ui/button";
 
 export default function NotFound() {
   return (
-    <main className={styles.container}>
-      <SearchX size={72} className={styles.icon} />
+    <main className="status-page">
+      <SearchX size={72} className="status-page-icon" />
 
-      <h1 className={styles.title}>Квартира не найдена</h1>
+      <h1 className="status-page-title">Квартира не найдена</h1>
 
-      <p className={styles.description}>
+      <p className="status-page-description">
         Возможно квартира была удалена или указана неверная ссылка.
       </p>
 
