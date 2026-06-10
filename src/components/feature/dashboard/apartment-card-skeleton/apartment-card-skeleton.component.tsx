@@ -1,5 +1,5 @@
-import { Card } from "../ui/card";
-import { Skeleton } from "../ui/skeleton";
+import { Card } from "../../../ui/card";
+import { Skeleton } from "../../../ui/skeleton";
 import styles from "./apartment-card-skeleton.module.css";
 
 export function ApartmentCardSkeleton() {

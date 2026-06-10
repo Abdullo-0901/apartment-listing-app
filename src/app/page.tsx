@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import { ApartmentListSkeleton } from "../components/apartment-list/apartment-list-skeleton.component";
-import { ApartmentList } from "../components/apartment-list/apartment-list.component";
-import { Filters } from "../components/apartment-filter/apartment-filter.component";
+import { ApartmentListSkeleton } from "../components/feature/dashboard/apartment-list/apartment-list-skeleton.component";
+import { ApartmentList } from "../components/feature/dashboard/apartment-list/apartment-list.component";
+import { Filters } from "../components/feature/dashboard/apartment-filter/apartment-filter.component";
 
 export default async function Home({
   searchParams,
@@ -25,7 +25,11 @@ export default async function Home({
         key={JSON.stringify(params)}
         fallback={<ApartmentListSkeleton />}
       >
-        <ApartmentList {...params} />
+        <ApartmentList
+          maxPrice={params.maxPrice}
+          minPrice={params.minPrice}
+          rooms={params.rooms}
+        />
       </Suspense>
     </main>
   );

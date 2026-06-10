@@ -2,9 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./apartment-card.module.css";
-import { Button } from "../ui/button";
-import { Card } from "../ui/card";
+import { Button } from "../../../ui/button";
+import { Card } from "../../../ui/card";
 import { Apartment } from "@/src/types";
+import { Badge } from "@/src/components/ui/badge";
 
 export function ApartmentCard({ apartment }: { apartment: Apartment }) {
   return (
@@ -18,8 +19,12 @@ export function ApartmentCard({ apartment }: { apartment: Apartment }) {
         />
 
         <div className={styles.badges}>
-          <span>{apartment.rooms} комн.</span>
-          <span>{apartment.area} м²</span>
+          <Badge className={styles.badgeSubContainer}>
+            <span>{apartment.rooms} комн.</span>
+          </Badge>
+          <Badge className={styles.badgeSubContainer}>
+            <span>{apartment.area} м²</span>
+          </Badge>
         </div>
       </div>
 

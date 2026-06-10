@@ -37,10 +37,13 @@
   z-index: 1;
 }
 
+.badgeSubContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .badges span {
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgb(255 255 255 / 95%);
   backdrop-filter: blur(8px);
   font-size: 14px;
   font-weight: 600;

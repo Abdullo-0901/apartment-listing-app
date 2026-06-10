@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { Button } from "../ui/button";
-import { Card } from "../ui/card";
-import { Input } from "../ui/input";
+import { Button } from "../../../ui/button";
+import { Card } from "../../../ui/card";
+import { Input } from "../../../ui/input";
 import { cn } from "@/src/lib";
 import styles from "./apartment-filter.module.css";
 import { useState } from "react";
@@ -31,13 +31,13 @@ export function Filters({
   // Debounces
   //---------------------------------------------------------------------
 
-  const updateMinPrice = useDebounce((value: string) => {
+  const updateMinPrice = useDebounce(500, (value: string) => {
     updateParam("minPrice", value);
-  }, 500);
+  });
 
-  const updateMaxPrice = useDebounce((value: string) => {
+  const updateMaxPrice = useDebounce(500, (value: string) => {
     updateParam("maxPrice", value);
-  }, 500);
+  });
 
   //---------------------------------------------------------------------
   // Functions

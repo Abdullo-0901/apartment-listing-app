@@ -1,8 +1,8 @@
 import { useCallback, useRef } from "react";
 
 export function useDebounce<T extends unknown[]>(
+  delay: number,
   callback: (...args: T) => void,
-  delay = 500,
 ) {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
