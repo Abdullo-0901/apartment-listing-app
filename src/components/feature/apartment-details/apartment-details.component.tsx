@@ -21,7 +21,7 @@ export function ApartmentDetails({ apartment }: { apartment: Apartment }) {
           alt={apartment.title}
           fill
           priority
-          className={styles.image}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
 

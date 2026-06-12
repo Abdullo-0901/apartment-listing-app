@@ -15,7 +15,12 @@ export function ApartmentCard({ apartment }: { apartment: Apartment }) {
           fill
           src={apartment.image}
           alt={apartment.title}
-          className={styles.image}
+          // className={styles.image}
+          sizes="
+    (max-width: 600px) 100vw,
+    (max-width: 1024px) 50vw,
+    33vw
+  "
         />
 
         <div className={styles.badges}>
