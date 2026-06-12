@@ -1,8 +1,9 @@
 .filters {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 48px;
-  padding: 32px;
+  padding: 20px 24px;
   margin-bottom: 40px;
   border-radius: 32px;
 }
@@ -62,7 +63,6 @@
 .actions {
   display: flex;
   align-items: flex-end;
-  margin-left: auto;
 }
 
 .resetButton {

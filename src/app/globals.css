@@ -146,7 +146,7 @@
 }
 
 .hero h1 {
-  font-size: 56px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   margin-bottom: 12px;
   line-height: 1.1;
@@ -246,7 +246,7 @@
     padding: 32px 16px 48px;
   }
   .hero h1 {
-    font-size: 40px;
+    /* font-size: 40px; */
   }
 }
 
