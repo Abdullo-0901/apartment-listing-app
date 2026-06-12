@@ -1,5 +1,6 @@
 import { getApartments } from "@/src/lib";
 import { ApartmentCard } from "../apartment-card/apartment-card.component";
+import styles from "./apartament.module.css";
 
 export async function ApartmentList({
   maxPrice,
@@ -30,7 +31,7 @@ export async function ApartmentList({
 
   //---------------------------------------------------------------------
   return (
-    <section className="apartments-grid">
+    <section className={styles.apartmentsGrid}>
       {apartments.map((apartment) => (
         <ApartmentCard key={apartment.id} apartment={apartment} />
       ))}

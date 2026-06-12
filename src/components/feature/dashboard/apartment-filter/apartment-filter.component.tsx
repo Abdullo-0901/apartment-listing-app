@@ -9,7 +9,7 @@ import styles from "./apartment-filter.module.css";
 import { useState } from "react";
 import { useDebounce } from "@/src/hook";
 
-export function Filters({
+export function ApartmentFilters({
   maxPrice,
   minPrice,
   rooms,
@@ -53,6 +53,13 @@ export function Filters({
     }
 
     router.push(`?${params.toString()}`);
+  }
+
+  function resetFilters() {
+    setMinPriceValue("");
+    setMaxPriceValue("");
+
+    router.push("/");
   }
 
   //---------------------------------------------------------------------
@@ -113,6 +120,16 @@ export function Filters({
             }}
           />
         </div>
+      </div>
+
+      <div className={styles.actions}>
+        <Button
+          variant="outline"
+          className={styles.resetButton}
+          onClick={resetFilters}
+        >
+          Сбросить
+        </Button>
       </div>
     </Card>
   );

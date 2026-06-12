@@ -20,7 +20,6 @@
 
 .label {
   color: #6b7280;
-
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -49,60 +48,69 @@
 
 .separator {
   color: #9ca3af;
-
   font-size: 24px;
   font-weight: 500;
 }
 
 .input {
-  width: 180px;
+  max-width: 180px;
   height: 45px;
   border-radius: 18px;
   font-size: 16px;
 }
 
-@media (max-width: 900px) {
+.actions {
+  display: flex;
+  align-items: flex-end;
+  margin-left: auto;
+}
+
+.resetButton {
+  height: 45px;
+  padding: 0 18px;
+  border-radius: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.resetButton:hover {
+  transform: translateY(-1px);
+}
+/* mobile style sheets */
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sheetContent {
+  border-top-left-radius: 0.55rem;
+  border-top-right-radius: 0.55rem;
+  padding: 10px;
+}
+
+.filterText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.filterHeader {
+  padding-bottom: 16px;
+}
+
+@media (max-width: 600px) {
   .filters {
     flex-direction: column;
     align-items: stretch;
-
     gap: 24px;
   }
 
-  .rooms {
-    flex-wrap: wrap;
-  }
-
   .price {
     width: 100%;
   }
-
   .input {
     flex: 1;
     width: auto;
-  }
-}
-
-@media (max-width: 640px) {
-  .filters {
-    padding: 20px;
-  }
-
-  .rooms {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .roomButton {
-    width: 100%;
-  }
-
-  .price {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .separator {
-    display: none;
   }
 }

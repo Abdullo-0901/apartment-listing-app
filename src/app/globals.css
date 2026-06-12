@@ -140,6 +140,9 @@
 
 .hero {
   margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .hero h1 {
@@ -152,19 +155,6 @@
 .hero p {
   font-size: 18px;
   color: var(--muted-foreground);
-}
-
-.results {
-  margin-bottom: 24px;
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--muted-foreground);
-}
-
-.apartments-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 24px;
 }
 
 .status-page {
@@ -258,7 +248,17 @@
   .hero h1 {
     font-size: 40px;
   }
-  .apartments-grid {
-    grid-template-columns: 1fr;
+}
+
+.filter-show {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .filter-hidden {
+    display: none;
+  }
+  .filter-show {
+    display: flex;
   }
 }
