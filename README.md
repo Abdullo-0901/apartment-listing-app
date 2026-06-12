@@ -1,37 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏠 Apartment Listing App
 
-## Getting Started
+A responsive apartment rental application built with **Next.js**, **TypeScript**, and **JSON Server**.
 
-First, run the development server:
+## ✨ Features
+
+- Browse apartment listings
+- View apartment details
+- Filter apartments by room count
+- Filter apartments by minimum and maximum price
+- Responsive design
+- Mobile filter sheet
+- Loading states
+- Empty states
+- Server-side data fetching
+
+## 🛠 Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- JSON Server
+- CSS Modules
+- Shadcn UI
+- Radix UI
+
+## 🚀 Getting Started
+
+### 1. Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Create environment variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env` file from `.env.dist`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cp .env.dist .env
+```
 
-## Learn More
+### 3. Start the mock API server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm run run-server
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The API will be available at:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+http://localhost:3002
+```
 
-## Deploy on Vercel
+### 4. Start the development server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# apartment-listing-app
+Open:
+
+```text
+http://localhost:3000
+```
+
+## 📦 Production
+
+Build the application:
+
+```bash
+pnpm build
+```
+
+Start the production server:
+
+```bash
+pnpm start
+```
+
+## 📜 Available Scripts
+
+| Command               | Description                           |
+| --------------------- | ------------------------------------- |
+| `pnpm dev`            | Start development server              |
+| `pnpm build`          | Create production build               |
+| `pnpm start`          | Start production server               |
+| `pnpm lint`           | Run ESLint                            |
+| `pnpm run run-server` | Start JSON Server                     |
+| `pnpm compile`        | Run TypeScript compiler in watch mode |
+
+## 📁 Project Structure
+
+```text
+src/
+├── app/
+├── components/
+│   ├── feature/
+│   └── ui/
+├── hook/
+├── lib/
+└── types/
+
+public/
+└── images/
+
+db.json
+.env.dist
+```
+
+## 📝 Notes
+
+- Make sure the JSON Server is running before starting the Next.js application.
+- Create a `.env` file from `.env.dist` before running the project.
+- The application expects the mock API to be available on port `3002`.
+  x
