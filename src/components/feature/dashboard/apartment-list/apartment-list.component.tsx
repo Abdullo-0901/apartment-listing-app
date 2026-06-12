@@ -15,6 +15,7 @@ export async function ApartmentList({
   // Variables
   //---------------------------------------------------------------------
 
+  const hasFilters = rooms || minPrice || maxPrice;
   const parsedRooms = rooms && !Number.isNaN(Number(rooms)) ? rooms : undefined;
 
   const parsedMinPrice =
@@ -28,6 +29,24 @@ export async function ApartmentList({
     minPrice: parsedMinPrice,
     rooms: parsedRooms,
   });
+
+  if (apartments.length !== 0) {
+    return (
+      <div className={styles.emptyState}>
+        {hasFilters ? (
+          <>
+            <h3>Ничего не найдено</h3>
+            <p>Попробуйте изменить фильтры поиска.</p>
+          </>
+        ) : (
+          <>
+            <h3>Пока нет квартир</h3>
+            <p>Объявления появятся здесь позже.</p>
+          </>
+        )}
+      </div>
+    );
+  }
 
   //---------------------------------------------------------------------
   return (
